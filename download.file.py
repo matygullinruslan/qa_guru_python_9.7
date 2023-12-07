@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 options = webdriver.ChromeOptions()
 prefs = {
-    'download.default_directory': '/Users/rusel/File_project/tmp',
+    'download.default_directory': '/Users/rusel/QA.GURU/qa_guru_python_9.7/tmp',
     "download.promt_for_download": False
 }
 
