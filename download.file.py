@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 options = webdriver.ChromeOptions()
 prefs = {
-    'download.default_directory': '/Users/rusel/QA.GURU/qa_guru_python_9.7/tmp',
+    'download.default_directory': 'C:\\Users\\rusel\\QA.GURU\\qa_guru_python_9.7\\tmp',
     "download.promt_for_download": False
 }
 
@@ -18,3 +18,6 @@ browser.config.driver = driver
 browser.open('https://github.com/pytest-dev/pytest/blob/main/README.rst')
 browser.element('[data-testid="download-raw-button"]').click()
 time.sleep(5)
+
+
+
