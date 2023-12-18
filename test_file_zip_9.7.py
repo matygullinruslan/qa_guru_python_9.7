@@ -17,7 +17,7 @@ with ZipFile("test_archive.zip", "w") as myzip:  #
     # os.rename('.\\qa_guru_python_9.7\\test_archive.zip', '.\\qa_guru_python_9.7\\tmp\\test_archive.zip')
 os.rename('C:\\Users\\rusel\\QA.GURU\\qa_guru_python_9.7\\test_archive.zip',
           'C:\\Users\\rusel\\QA.GURU\\qa_guru_python_9.7\\tmp\\test_archive.zip')
-with ZipFile("test_archive.zip", "w") as myzip:
+with ZipFile("test_archive.zip", "r") as myzip:
     content = myzip.read("test_file.txt")
 print(content)
 
