@@ -1,6 +1,1 @@
-
-directory = os.path.join(os.path.dirname(file))
-print(directory)
-
-directory = os.path.join(os.path.dirname(file), "resources")
-print(directory)
+Привет, QA_GURU!
