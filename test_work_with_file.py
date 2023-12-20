@@ -23,8 +23,8 @@ def test_create_zip_archive():
     with ZipFile("resources/test_archive.zip") as myzip:
         print(myzip.namelist())  # отобразил содержимое архива
         myzip.extractall(path="resources")  # извлекаю все файлы из архива в папку resources
-        shutil.rmtree('resources')
-    #yield os.remove('resources/test_archive.zip')
+       # yield shutil.rmtree('resources')
+    yield os.remove('resources/test_archive.zip')
 
 
 def test_read_pdf(test_create_zip_archive):
@@ -50,3 +50,6 @@ def test_read_csv(test_create_zip_archive):
     with open('resources/test_file.txt') as read_txt:
         content = read_txt.read()
         assert 'QA_GURU' in content
+
+
+
