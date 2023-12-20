@@ -3,6 +3,7 @@ from zipfile import ZipFile
 from openpyxl import load_workbook
 from pypdf import PdfReader
 import pytest
+import shutil
 
 directory = os.path.join(os.path.dirname(__file__), "resources")
 print(directory)
@@ -22,7 +23,8 @@ def test_create_zip_archive():
     with ZipFile("resources/test_archive.zip") as myzip:
         print(myzip.namelist())  # отобразил содержимое архива
         myzip.extractall(path="resources")  # извлекаю все файлы из архива в папку resources
-    yield os.remove('resources/test_archive.zip')
+        shutil.rmtree('resources')
+    #yield os.remove('resources/test_archive.zip')
 
 
 def test_read_pdf(test_create_zip_archive):
@@ -40,7 +42,7 @@ def test_read_xlsx(test_create_zip_archive):
 def test_read_csv(test_create_zip_archive):
     read_csv = open('resources/test_file.csv')  # открыл файл
     content = read_csv.readlines()  # читаю текст файла
-    rows = content[1]  # выбрад строку по которой буду делать проверку
+    rows = content[1]  # выбрал строку по которой буду делать проверку
     assert 'booker12;9012;Rachel;Booker' in rows
 
 
